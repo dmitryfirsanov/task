@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { ref } from 'vue';
 
 import Quatrain from '../components/Quatrain.vue';
 
@@ -25,8 +25,6 @@ const toggleQuatrain = (quatrainIndex: number) => {
   } else {
     disabledQuatrains.value.splice(index, 1);
   }
-
-  console.log(disabledQuatrains.value);
 };
 </script>
 
@@ -38,13 +36,15 @@ const toggleQuatrain = (quatrainIndex: number) => {
     </div>
     <div class="poem__controls">
       <button
-        v-for="(quatrains, index) of quatrains"
-        :key="index"
+        v-for="position of quatrains.length"
+        :key="position"
         :class="[
           'poem__control',
-          { 'poem__control--disabled': disabledQuatrains.includes(index) },
+          {
+            'poem__control--disabled': disabledQuatrains.includes(position - 1),
+          },
         ]"
-        @click="toggleQuatrain(index)"
+        @click="toggleQuatrain(position - 1)"
       />
     </div>
     <div class="poem__text">
@@ -139,7 +139,7 @@ const toggleQuatrain = (quatrainIndex: number) => {
   }
 
   .poem__author {
-    position:static;
+    position: static;
   }
 
   .poem__controls {

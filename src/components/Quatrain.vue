@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
-
 const props = defineProps<{
   quatrain: string;
 }>();
@@ -15,7 +13,10 @@ const lines = props.quatrain.split('\n');
       :key="index"
       class="quatrain__line"
     >
-      <span v-if="index % 2 === 1" class="quatrain__tab" />{{ line }}
+      <span
+        v-if="index % 2 === 1"
+        class="quatrain__tab"
+      />{{ line }}
     </p>
   </div>
 </template>
@@ -34,9 +35,11 @@ const lines = props.quatrain.split('\n');
 
 .quatrain__tab {
   margin-left: 26px;
-};
+}
 
-/* @media (max-width: 767px)  {
-  .quatrain__line
-} */
+@media (max-width: 767px) {
+  .quatrain__tab {
+    margin-left: 16px;
+  }
+}
 </style>

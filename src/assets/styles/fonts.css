@@ -6,18 +6,6 @@
 
 @font-face {
   font-family: 'PlayFair Display';
-  font-weight: 500;
-  src: url('../fonts/PlayFair_Display/PlayFairDisplay-Medium.ttf');
-}
-
-@font-face {
-  font-family: 'PlayFair Display';
   font-weight: 600;
   src: url('../fonts/PlayFair_Display/PlayFairDisplay-SemiBold.ttf');
-}
-
-@font-face {
-  font-family: 'PlayFair Display';
-  font-weight: 700;
-  src: url('../fonts/PlayFair_Display/PlayFairDisplay-Bold.ttf');
 }
