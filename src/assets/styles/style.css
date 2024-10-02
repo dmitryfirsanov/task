@@ -1,2 +1,28 @@
 @import "normalize.css";
 @import "fonts.css";
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: 'PlayFair Display';
+  background: #e5e2dd;
+  color: #000000;
+}
+
+h1, p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1921px) {
+  html {
+    font-size: 24px;
+  }
+}
